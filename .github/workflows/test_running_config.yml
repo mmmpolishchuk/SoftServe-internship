@@ -19,7 +19,7 @@ jobs:
         dotnet-version: 3.0.100
     - name: Restore dependencies
       run: dotnet restore
-      working-directory: SoftserveRepository\ToDo
+      working-directory: SoftServe-internship/ToDo
     - name: Build
       run: dotnet build --no-restore
     - name: Test
