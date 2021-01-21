@@ -24,10 +24,10 @@ jobs:
         
     - name: Restore dependencies
       run: dotnet restore
-      working-directory: "**/todo/**/*.csproj"
+     # working-directory: "**/todo/**/*.csproj"
       
     - name: Build
       run: dotnet build --configuration Release
       
     - name: Test
-      run: dotnet test --configuration Release
+      run: dotnet test --no-restore --no-build --configuration
