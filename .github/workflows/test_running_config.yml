@@ -1,4 +1,4 @@
-name: Test running configuration
+name: Tests configuration
 
 on:
   push:
@@ -7,9 +7,12 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  build-and-test:
 
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy: 
+      matrix: 
+        os: [ubuntu-latest, windows-latest, macOS-latest]
 
     steps:
     - uses: actions/checkout@v2
@@ -21,10 +24,10 @@ jobs:
         
     - name: Restore dependencies
       run: dotnet restore
-      working-directory: SoftServe-internship/ToDo/ToDo.Tests
+      working-directory: "**/ToDo/**/*.csproj"
       
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build --configuration Release
       
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test --configuration Release
