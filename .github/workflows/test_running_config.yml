@@ -2,7 +2,7 @@ name: Tests configuration
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master/** ]
   pull_request:
     branches: [ master ]
 
@@ -24,10 +24,7 @@ jobs:
         
     - name: Restore dependencies
       run: dotnet restore ./ToDo/
-           
-   #- name: Clean
-    # run: dotnet clean ./ToDo/ToDo.sln --configuration Release && dotnet nuget locals all --clear
-      
+               
     - name: Build
       run: dotnet build --configuration Release --no-restore ./ToDo
       
