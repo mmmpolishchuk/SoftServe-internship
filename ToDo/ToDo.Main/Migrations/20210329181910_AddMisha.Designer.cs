@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ToDo.Models;
 
 namespace ToDo.Migrations
 {
     [DbContext(typeof(ToDoContext))]
-    partial class ToDoContextModelSnapshot : ModelSnapshot
+    [Migration("20210329181910_AddMisha")]
+    partial class AddMisha
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -36,9 +38,6 @@ namespace ToDo.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Secret")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Slava")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
