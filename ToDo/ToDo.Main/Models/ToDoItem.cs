@@ -13,5 +13,6 @@ namespace ToDo.Models
         public string Secret { get; set; }
         public string Misha { get; set; }
         public string Slava { get; set; }
+        public string Dzhus { get; set; }
     }
 }
