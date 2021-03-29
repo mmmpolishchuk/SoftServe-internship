@@ -11,5 +11,6 @@ namespace ToDo.Models
         [DefaultValue(false)]
         public bool IsComplete { get; set; }
         public string Secret { get; set; }
+        public string Misha { get; set; }
     }
 }
