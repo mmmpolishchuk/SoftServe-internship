@@ -14,5 +14,6 @@ namespace ToDo.Models
         public string Misha { get; set; }
         public string Slava { get; set; }
         public string Dzhus { get; set; }
+        public string Igorovich { get; set; }
     }
 }
