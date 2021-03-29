@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ToDo.Models;
 
 namespace ToDo.Migrations
 {
     [DbContext(typeof(ToDoContext))]
-    partial class ToDoContextModelSnapshot : ModelSnapshot
+    [Migration("20210329184219_Merge")]
+    partial class Merge
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -28,13 +30,13 @@ namespace ToDo.Migrations
                     b.Property<string>("Dzhus")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Igorovich")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("IsComplete")
                         .HasColumnType("bit");
 
                     b.Property<string>("Misha")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Misha2")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")

@@ -12,8 +12,8 @@ namespace ToDo.Models
         public bool IsComplete { get; set; }
         public string Secret { get; set; }
         public string Misha { get; set; }
+        public string Misha2 { get; set; }
         public string Slava { get; set; }
         public string Dzhus { get; set; }
-        public string Igorovich { get; set; }
     }
 }
